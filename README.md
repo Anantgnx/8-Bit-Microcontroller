@@ -8,8 +8,6 @@ The entire system, from the control unit's state machine to the individual regis
 
 
 
-[Image of a CPU on a circuit board]
-
 
 ## 2. Architecture & Features
 
