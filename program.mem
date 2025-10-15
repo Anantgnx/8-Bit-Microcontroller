@@ -1,0 +1,41 @@
+// Test Program: Adds 5 and 10, stores 15 (0x0F) in RAM[0x20].
+// Then, counts down from 3, storing 0 in RAM[0x21].
+// Addresses are on the left, data on the right.
+// Each instruction is 2 bytes (16 bits) long.
+
+// -- Part 1: Addition --
+// 0x00: LDI 0x05
+00
+05
+// 0x02: STORE 0x020
+20
+20
+// 0x04: LDI 0x0A
+00
+0A
+// 0x06: ADD 0x020
+40
+20
+// 0x08: STORE 0x020
+20
+20
+
+// -- Part 2: Countdown Loop --
+// 0x0A: LDI 0x03
+00
+03
+// 0x0C: DEC  (LOOP starts here)
+70
+00
+// 0x0E: JZ 0x012 (Jump to END_LOOP)
+D0
+12
+// 0x10: JMP 0x00C (Jump to LOOP)
+C0
+0C
+// 0x12: STORE 0x021 (END_LOOP starts here)
+20
+21
+// 0x14: JMP 0x014 (HALT loop)
+C0
+14
